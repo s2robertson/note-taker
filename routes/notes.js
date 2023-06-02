@@ -1,5 +1,5 @@
 const express = require('express');
-const { getNotes, insertNote } = require('../db/db');
+const { getNotes, insertNote, deleteNote } = require('../db/db');
 
 const router = express.Router();
 
@@ -23,5 +23,15 @@ router.post('/', (req, res) => {
         res.status(500).json('An error occurred while inserting the note');
     })
 });
+
+router.delete('/:id', (req, res) => {
+    const id = req.params.id;
+    deleteNote(id).then(deleted => {
+        res.json(deleted);
+    })
+    .catch(err => {
+        res.status(500).json('An error occurred while deleting the note');
+    })
+})
 
 module.exports = router;
