@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', apiRouter);
 
+// to serve the js/css assets
 app.use(express.static('public'));
 
 app.get('/notes', (req, res) => {

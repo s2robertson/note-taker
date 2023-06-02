@@ -15,6 +15,7 @@ module.exports.insertNote = function(note) {
             note.id = uuidv4();
         }
         notes.push(note);
+        // save, and return the new note
         return fs.writeFile(DB_PATH, JSON.stringify(notes)).then(() => note);
     })
 }
@@ -32,6 +33,7 @@ module.exports.deleteNote = function(id) {
             return false;
         }
         notes.splice(index, 1);
+        // save, and return that the deletion was successful
         return fs.writeFile(DB_PATH, JSON.stringify(notes)).then(() => true);
     })
 }
