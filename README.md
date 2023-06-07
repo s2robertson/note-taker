@@ -15,7 +15,7 @@ the note on the server.  Previous are summarized on the left side of the screen,
 on an entry will display its details.  Each saved note also has a trash can icon, which will
 delete it.
 
-[Try the app on Heroku](https://s2robertson-note-taker.herokuapp.com/)
+<!-- [Try the app on Heroku](https://s2robertson-note-taker.herokuapp.com/) -->
 
 ## Credits
 The initial files (the front-end) were provided by University of Toronto Coding Bootcamp.
